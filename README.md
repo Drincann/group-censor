@@ -19,7 +19,7 @@
 ```json
 {
   // bot 配置
-    "bot": {
+    "botconfig": {
         "baseUrl": "http://example",
         "authKey": "authkey",
         "qq": 1019933576
