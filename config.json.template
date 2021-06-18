@@ -1,5 +1,5 @@
 {
-    "bot": {
+    "botconfig": {
         "baseUrl": "http://example",
         "authKey": "authkey",
         "qq": 1019933576

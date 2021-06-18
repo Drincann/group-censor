@@ -1,14 +1,14 @@
 const { Bot, Message, Middleware } = require('mirai-js');
-const { groups, sendTo, recalldelay = 0, bot } = require('./config.json');
+const { groups, sendTo, recalldelay = 0, botconfig } = require('./config.json');
 const { query } = require('./api');
 
 const bot = new Bot();
 
 (async () => {
     await bot.open({
-        baseUrl: bot.baseUrl,
-        authKey: bot.authKey,
-        qq: bot.qq,
+        baseUrl: botconfig.baseUrl,
+        authKey: botconfig.authKey,
+        qq: botconfig.qq,
     });
 
     bot.on('GroupMessage', new Middleware()
