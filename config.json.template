@@ -1,0 +1,14 @@
+{
+    "bot": {
+        "baseUrl": "http://example",
+        "authKey": "authkey",
+        "qq": 1019933576
+    },
+    "apikey": "apikey",
+    "secretkey": "secretkey",
+    "groups": [
+        730757181
+    ],
+    "sendTo": 1019933576,
+    "recalldelay": 5
+}
