@@ -42,6 +42,8 @@
     ],
     
   // 撤回延时 (s)
-    "recalldelay": 5
+    "recalldelay": 5,
+  // 发送重复内容
+    "sendDuplicate": false
 }
 ```
