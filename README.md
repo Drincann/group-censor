@@ -24,16 +24,23 @@
         "authKey": "authkey",
         "qq": 1019933576
     },
+
   // 百度 api key
     "apikey": "apikey",
+
   // secretkey
     "secretkey": "secretkey",
+
   // 作用于群聊
     "groups": [
         730757181
     ],
+
   // 撤回后发给
-    "sendTo": 1019933576,
+    "sendTo": [
+      1019933576
+    ],
+    
   // 撤回延时 (s)
     "recalldelay": 5
 }
