@@ -2,6 +2,8 @@
 
 ## 使用
 
+node v14+
+
 - 配置
 
   修改 `./config.json.template` 并更名 `./config.json` 。
@@ -9,7 +11,7 @@
 - 运行
 
   ```shell
-    node .
+    npm i ; node .
   ```
 
 ## 配置
@@ -40,9 +42,10 @@
     "sendTo": [
       1019933576
     ],
-    
+
   // 撤回延时 (s)
     "recalldelay": 5,
+
   // 发送重复内容
     "sendDuplicate": false
 }
