@@ -12,5 +12,6 @@
     "sendTo": [
         1019933576
     ],
-    "recalldelay": 5
+    "recalldelay": 5,
+    "sendDuplicate": false
 }

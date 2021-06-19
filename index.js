@@ -1,6 +1,9 @@
 const { Bot, Message, Middleware } = require('mirai-js');
-const { groups, sendTo, recalldelay = 0, botconfig } = require('./config.json');
+const { groups, sendTo, recalldelay = 0, botconfig, sendDuplicate } = require('./config.json');
 const { query } = require('./api');
+if (!sendDuplicate) {
+    var idSet = new Set();
+}
 
 const bot = new Bot();
 
@@ -20,13 +23,21 @@ const bot = new Bot();
             let isRecall = false;
             data.classified?.Image?.forEach(async (img) => {
                 let result = await query({ imgUrl: img.url })
-
                 if (result == 2 || result == 3) {
                     if (result == 2 && sendTo.length) {
-                        sendTo.forEach(friend => bot.sendMessage({
-                            friend,
-                            message: new Message().addImageId(img.imageId),
-                        }));
+                        sendTo.forEach(friend => {
+                            if (!sendDuplicate) {
+                                if (idSet.has(img.imageId)) {
+                                    return;
+                                }
+                                idSet.add(img.imageId);
+                            }
+
+                            bot.sendMessage({
+                                friend,
+                                message: new Message().addImageId(img.imageId),
+                            })
+                        });
                     }
 
                     if (isRecall) {
