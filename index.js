@@ -22,11 +22,11 @@ const bot = new Bot();
                 let result = await query({ imgUrl: img.url })
 
                 if (result == 2 || result == 3) {
-                    if (result == 2 && sendTo) {
-                        bot.sendMessage({
-                            friend: sendTo,
+                    if (result == 2 && sendTo.length) {
+                        sendTo.forEach(friend => bot.sendMessage({
+                            friend,
                             message: new Message().addImageId(img.imageId),
-                        });
+                        }));
                     }
 
                     if (isRecall) {

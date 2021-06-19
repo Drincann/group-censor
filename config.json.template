@@ -9,6 +9,8 @@
     "groups": [
         730757181
     ],
-    "sendTo": 1019933576,
+    "sendTo": [
+        1019933576
+    ],
     "recalldelay": 5
 }
